@@ -2,22 +2,42 @@ require: slotfilling/slotFilling.sc
   module = sys.zb-common
 theme: /
 
-    state: Start
+    state: start
         q!: $regex</start>
         a: Начнём.
+        event: noMatch || toState = "./"
 
-    state: Hello
+    state: hello
         intent!: /привет
-        a: Привет привет
+        random:
+            a: Привет 
+            a: Здравствуете 
 
-    state: Bye
-        intent!: /пока
-        a: Пока пока
+    state: weather 
+        q:* (прогноз погоды/~какая (~сегодня/~завтра/~послезавтра)/погода ) *
+        a: Погоду в каком городе вы хотите узнать?
 
+        state: state
+            q: * (Санкт-Петербург/Москва) *
+            random:
+                a: Погода хорошая можно погулять
+                a: Погода плохая лучше посидеть дома
+
+    
+    state: currency 
+        q:* (~курс валют*(~евро/~доллар/~юань/~USB/~EUR))*
+        a:Курс на какой день Вас интересует сегодня или завтра?    
+        
+        state: kurs
+            q: * (сегодня/завтра) *
+            a: Курс доллара на сегодня 75 рублей. 
+            a: Курс евро на сегодня 80 рублей.
+            a: Курс доллара на завтра  76 рублей. 
+            a: Курс евро на завтра 81 рублей.
+        
+            
     state: NoMatch
         event!: noMatch
-        a: Я не понял. Вы сказали: {{$request.query}}
-
-    state: Match
-        event!: match
-        a: {{$context.intent.answer}}
+        a: Я бот который говорю погоду и курс валюты, можете переформулировать
+            вопрос.
+        
