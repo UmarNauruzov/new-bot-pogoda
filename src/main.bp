@@ -1,0 +1,47 @@
+{
+  "positions" : [ {
+    "id" : "/Start",
+    "x" : 387,
+    "y" : 88
+  }, {
+    "id" : "/Hello",
+    "x" : 391,
+    "y" : 484
+  }, {
+    "id" : "/NoMatch",
+    "x" : 32,
+    "y" : 977
+  }, {
+    "id" : "/Match",
+    "x" : 394,
+    "y" : 1303
+  }, {
+    "id" : "/Weather",
+    "x" : 400,
+    "y" : 992
+  }, {
+    "id" : "/Weather/DoinBad",
+    "x" : 116,
+    "y" : 208
+  }, {
+    "id" : "/Weather/YouCanHelp",
+    "x" : 620,
+    "y" : 502
+  }, {
+    "id" : "/currency",
+    "x" : -324,
+    "y" : 54
+  }, {
+    "id" : "/weather",
+    "x" : 329,
+    "y" : 2
+  }, {
+    "id" : "/hello",
+    "x" : -17,
+    "y" : 436
+  }, {
+    "id" : "/start",
+    "x" : -23,
+    "y" : -211
+  } ]
+}
